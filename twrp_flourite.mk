@@ -15,7 +15,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Import OrangeFox specifics
 $(call inherit-product, device/xiaomi/flourite/fox_flourite.mk)
 
-## Device identifier
 PRODUCT_DEVICE := flourite
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 15 Pro+ 5G / POCO M8 Pro 5G

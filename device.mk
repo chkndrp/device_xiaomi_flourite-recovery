@@ -16,7 +16,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# OTA device(s)
+# OTA assert, _global suffix is for ROM compatibility
 TARGET_OTA_ASSERT_DEVICE := flourite,flourite_global
 
 # FastbootD support
@@ -42,11 +42,6 @@ PRODUCT_SHIPPING_API_LEVEL  := 34
 PRODUCT_TARGET_VNDK_VERSION := 35
 BOARD_SHIPPING_API_LEVEL := 34
 SHIPPING_API_LEVEL := 34
-
-# Display Size & Density
-TARGET_SCREEN_HEIGHT  := 2772
-TARGET_SCREEN_DENSITY := 480
-TARGET_SCREEN_WIDTH   := 1280
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -88,7 +83,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/recovery/security/miui
 
-# Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/qcom/opensource/commonsys-intf/display
 
@@ -109,20 +103,25 @@ TW_INCLUDE_PYTHON       := true
 TW_NO_SCREEN_BLANK      := true
 TW_FRAMERATE            := 120
 
-# Blacklist Goodix fingerprint. There's no reason to include this input in recovery
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+
+# May be causing power button issues.
 TW_INPUT_BLACKLIST := "uinput-goodix"
 
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone45/temp"
-TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
-
-# Vendor modules required for the recovery to function properly
+# TWRP - Modules
 TW_LOAD_VENDOR_MODULES  += "panel_event_notifier.ko xiaomi_touch.ko nt38771_touch.ko
 TW_LOAD_VENDOR_MODULES  += adsp_loader_dlkm.ko qti_battery_charger.ko
 TW_LOAD_VENDOR_MODULES  += camera.ko stm_st54se_gpio.ko"
 
-TW_EXCLUDE_DEFAULT_USB_INIT   := true
-TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+# TWRP - Paths
+TW_CUSTOM_CPU_TEMP_PATH := \
+    "/sys/class/thermal/thermal_zone45/temp"
 
+TW_BRIGHTNESS_PATH := \
+    "/sys/class/backlight/panel0-backlight/brightness"
+
+# TWRP - Haptics
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
