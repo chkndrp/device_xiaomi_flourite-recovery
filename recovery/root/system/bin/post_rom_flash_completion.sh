@@ -13,7 +13,7 @@ do_prop_cleanup() {
     resetprop ro.build.version.security_patch "$(resetprop twrp.temp.security_patch)"
     resetprop ro.vendor.build.security_patch "$(resetprop twrp.temp.security_patch)"
 
-    resetprop -d twrp.temp.security_patch 
+    resetprop --delete twrp.temp.security_patch 
 }
 
 undo_sysctl_tune() {
@@ -26,7 +26,7 @@ undo_sysctl_tune() {
                 do echo "$gov" > "$g" 2>/dev/null;
             done
 
-            resetprop -d twrp.temp.cpu_governor;
+            resetprop --delete twrp.temp.cpu_governor;
     fi
 
 	echo 10000 > /sys/bus/platform/devices/1d84000.ufshc/auto_hibern8 2>/dev/null
