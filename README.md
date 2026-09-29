@@ -39,5 +39,5 @@ This recovery tree was initially made for `flourite`. For historical purposes,
 build the `twrp_flourite` target
 
 ```shell
-lunch twrp_flourite-ap2a-eng && mka adbd recoveryimage
+lunch twrp_flourite-bp2a-eng && mka adbd recoveryimage
 ```

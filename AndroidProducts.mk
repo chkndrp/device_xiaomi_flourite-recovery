@@ -4,4 +4,4 @@
 
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_flourite.mk
 
-COMMON_LUNCH_CHOICES := twrp_flourite-ap2a-eng
+COMMON_LUNCH_CHOICES := twrp_flourite-bp2a-eng
