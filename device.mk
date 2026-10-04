@@ -37,6 +37,11 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     checkpoint_gc
 
+# WLAN related binaries may expect configuration to be elsewhere
+BOARD_ROOT_EXTRA_SYMLINKS += \
+    /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:/vendor/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini \
+    /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:/vendor/odm/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
+
 # API
 PRODUCT_SHIPPING_API_LEVEL  := 34
 PRODUCT_TARGET_VNDK_VERSION := 35
@@ -100,6 +105,7 @@ TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
 TW_INCLUDE_PYTHON       := true
+TW_INCLUDE_WIFI         := true
 TW_NO_SCREEN_BLANK      := true
 TW_FRAMERATE            := 120
 
