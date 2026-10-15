@@ -114,8 +114,8 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 
 # TWRP - Modules
 TW_LOAD_VENDOR_MODULES  += "panel_event_notifier.ko xiaomi_touch.ko nt38771_touch.ko
-TW_LOAD_VENDOR_MODULES  += adsp_loader_dlkm.ko qti_battery_charger.ko
-TW_LOAD_VENDOR_MODULES  += camera.ko stm_st54se_gpio.ko"
+TW_LOAD_VENDOR_MODULES  += adsp_loader_dlkm.ko qti_battery_charger.ko aw8697_haptic.ko
+TW_LOAD_VENDOR_MODULES  += si_haptic.ko aac_haptic.ko camera.ko stm_st54se_gpio.ko"
 
 # TWRP - Paths
 TW_CUSTOM_CPU_TEMP_PATH := \
