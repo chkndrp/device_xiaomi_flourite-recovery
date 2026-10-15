@@ -3,7 +3,7 @@ fbe.metadata.wrappedkey=true
 
 # Logging
 persist.sys.qseelogd=true
-persist.logd.size=8M
+persist.logd.size=16M
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
