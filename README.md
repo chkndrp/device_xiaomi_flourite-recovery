@@ -33,6 +33,7 @@ Display                 | 6.83" CrystalRes AMOLED, 120Hz, 1280x2772
 - [x] Haptics
 - [x] Flashlight
 - [x] Custom splash
+- [x] WLAN
 
 ## How to build
 This recovery tree was initially made for `flourite`. For historical purposes,
