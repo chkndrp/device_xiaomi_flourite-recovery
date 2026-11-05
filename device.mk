@@ -39,8 +39,9 @@ PRODUCT_PACKAGES += \
 
 # WLAN related binaries may expect configuration to be elsewhere
 BOARD_ROOT_EXTRA_SYMLINKS += \
+    /odm:/vendor/odm \
     /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:/vendor/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini \
-    /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:/vendor/odm/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
+    /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:/odm/firmware/wlan/qca_cld/qca6750/WCNSS_qcom_cfg.ini
 
 # API
 PRODUCT_SHIPPING_API_LEVEL  := 35

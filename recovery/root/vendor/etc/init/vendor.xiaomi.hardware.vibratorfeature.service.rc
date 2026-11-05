@@ -8,7 +8,7 @@ on boot
 service vibratorfeature-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
     user root
     group root system input audio
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/vendor/odm/lib64:/bin
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/odm/lib64:/bin
     setenv RICHTAP_DEVICE_PATH /dev/qcom_haptic
     setenv ENV_RICHTAP_CONFIG_PATH /odm/etc/aac_richtap.config
     seclabel u:r:recovery:s0
